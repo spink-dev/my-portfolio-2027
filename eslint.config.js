@@ -1,11 +1,10 @@
 // @ts-check
 import eslint from '@eslint/js';
-import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import globals from 'globals';
 
-export default defineConfig(
+export default [
   {
     ignores: [
       'dist/**',
@@ -19,11 +18,16 @@ export default defineConfig(
     ],
   },
   eslint.configs.recommended,
-  tseslint.configs.recommended,
-  eslintPluginAstro.configs.recommended,
-  eslintPluginAstro.configs['jsx-a11y-recommended'],
+  ...tseslint.configs.recommended,
+  ...eslintPluginAstro.configs.recommended,
+  ...eslintPluginAstro.configs['jsx-a11y-recommended'],
   {
-    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+    languageOptions: { 
+      globals: { 
+        ...globals.node, 
+        ...globals.browser 
+      } 
+    },
     rules: {
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
       '@typescript-eslint/no-unused-vars': [
@@ -39,4 +43,4 @@ export default defineConfig(
       '@typescript-eslint/no-unused-vars': 'off',
     },
   },
-);
+];

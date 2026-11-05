@@ -17,6 +17,10 @@ const siteUrl =
 // https://astro.build/config
 export default defineConfig({
   site: siteUrl,
+  server: {
+    host: 'spink.localhost',
+    port: 3470,
+  },
 
   /**
    * 'server': every page is rendered per request (auth, DB reads, forms work everywhere).
