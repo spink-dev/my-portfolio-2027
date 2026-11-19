@@ -34,7 +34,7 @@
     "db:link": "supabase link"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/sitemap": "^3.7.5",
     "@astrojs/vercel": "^11.0.20",
     "@supabase/ssr": "^0.12.6",
     "@supabase/supabase-js": "^2.115.0",
